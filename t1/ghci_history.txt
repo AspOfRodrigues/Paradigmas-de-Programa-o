@@ -1,0 +1,722 @@
+<Prelude>  :cd C:\Users\user\Desktop\UFSM - Bacharelado em Ciencia da Computacao\3 semestre\Paradigmas de Programação
+Warning: changing directory causes all loaded modules to be unloaded,
+because the search path has changed.
+<Prelude>  :load "t1.hs"
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Ok, one module loaded.
+<Prelude>  isVowell a
+
+<interactive>:241:1: error:
+    • Variable not in scope: isVowell :: t0 -> t
+    • Perhaps you meant ‘isVowel’ (line 10)
+
+<interactive>:241:10: error: Variable not in scope: a
+<Prelude>  isVowel 'a'
+True
+<Prelude>  IsVowel 'B'
+
+<interactive>:243:1: error:
+    • Data constructor not in scope: IsVowel :: Char -> t
+    • Perhaps you meant variable ‘isVowel’ (line 10)
+<Prelude>  isVowel 'B'
+False
+<Prelude>  isVowel 'I'
+True
+<Prelude>  :cd C:\Users\user\Desktop\UFSM - Bacharelado em Ciencia da Computacao\3 semestre\Paradigmas de Programação
+Warning: changing directory causes all loaded modules to be unloaded,
+because the search path has changed.
+<Prelude>  :load "t1.hs"
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Ok, one module loaded.
+<Prelude>  addComma ["Adicione", "uma virgula"," no final da string"]
+["Adicione,","uma virgula,"," no final da string,"]
+<Prelude>  :cd C:\Users\user\Desktop\UFSM - Bacharelado em Ciencia da Computacao\3 semestre\Paradigmas de Programação
+Warning: changing directory causes all loaded modules to be unloaded,
+because the search path has changed.
+<Prelude>  :load "t1.hs"
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Ok, one module loaded.
+<Prelude>  addHtml ["Abra","ca","dabra"]
+["<LI>Abra<LI>","<LI>ca<LI>","<LI>dabra<LI>"]
+<Prelude>  addHtmlfun ["Abra","ca","dabra"]
+
+<interactive>:252:1: error:
+    • Variable not in scope: addHtmlfun :: [[Char]] -> t
+    • Perhaps you meant one of these:
+        ‘addHtmlfunc’ (line 29), ‘addHtmlan’ (line 27), ‘addHtml’ (line 22)
+<Prelude>  addHtmlfunc ["Abra","ca","dabra"]
+["<LI>Abra<LI>","<LI>ca<LI>","<LI>dabra<LI>"]
+<Prelude>  :reload
+
+t1.hs:41:21: error:
+    Variable not in scope: notelemen :: t0 -> [Char] -> Bool
+   |
+41 | remVog str = filter(`notelemen` "aeiouAEIOU")    |                     ^^^^^^^^^^^
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Failed, no modules loaded.
+<Prelude>  :cd C:\Users\user\Desktop\UFSM - Bacharelado em Ciencia da Computacao\3 semestre\Paradigmas de Programação
+Warning: changing directory causes all loaded modules to be unloaded,
+because the search path has changed.
+<Prelude>  :load "t1.hs"
+
+t1.hs:41:21: error:
+    Variable not in scope: notelemen :: t0 -> [Char] -> Bool
+   |
+41 | remVog str = filter(`notelemen` "aeiouAEIOU")    |                     ^^^^^^^^^^^
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Failed, no modules loaded.
+<Prelude>  :cd C:\Users\user\Desktop\UFSM - Bacharelado em Ciencia da Computacao\3 semestre\Paradigmas de Programação
+Warning: changing directory causes all loaded modules to be unloaded,
+because the search path has changed.
+<Prelude>  :load "t1.hs"
+
+t1.hs:41:21: error:
+    Variable not in scope: notelement :: Char -> [Char] -> Bool
+   |
+41 | remVog str = filter(`notelement` "aeiouAEIOU") str    |                     ^^^^^^^^^^^^
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Failed, no modules loaded.
+<Prelude>  :cd C:\Users\user\Desktop\UFSM - Bacharelado em Ciencia da Computacao\3 semestre\Paradigmas de Programação
+Warning: changing directory causes all loaded modules to be unloaded,
+because the search path has changed.
+<Prelude>  :load "t1.hs"
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Ok, one module loaded.
+<Prelude>  remVog "joaogay"
+"jgy"
+<Prelude>  :cd C:\Users\user\Desktop\UFSM - Bacharelado em Ciencia da Computacao\3 semestre\Paradigmas de Programação
+Warning: changing directory causes all loaded modules to be unloaded,
+because the search path has changed.
+<Prelude>  :load "t1.hs"
+
+t1.hs:34:16: error:
+    • Couldn't match type ‘[Char] -> [Char]’ with ‘[Char]’
+      Expected type: String
+        Actual type: [Char] -> [Char]
+    • Probable cause: ‘filter’ is applied to too few arguments
+      In the expression: filter (\ str -> notElem str "aeiouAEIOU")
+      In an equation for ‘rmvVowel’:
+          rmvVowel str = filter (\ str -> notElem str "aeiouAEIOU")
+   |
+34 | rmvVowel str = filter( \str -> notElem str "aeiouAEIOU" )     |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Failed, no modules loaded.
+<Prelude>  :reload
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Ok, one module loaded.
+<Prelude>  rmvVowel "Henrique"
+"Hnrq"
+<Prelude>  :reload
+
+t1.hs:27:24: error:
+    • Couldn't match type ‘[Char]’ with ‘String -> String’
+      Expected type: String -> String
+        Actual type: String
+    • Possible cause: ‘addHtmlan’ is applied to too many arguments
+      In the first argument of ‘map’, namely ‘(addHtmlan (str))’
+      In the expression: map (addHtmlan (str)) str
+      In an equation for ‘addHtmlfunc’:
+          addHtmlfunc str = map (addHtmlan (str)) str
+   |
+27 | addHtmlfunc str = map (addHtmlan(str)) str    |                        ^^^^^^^^^^^^^^
+
+t1.hs:27:34: error:
+    • Couldn't match type ‘[Char]’ with ‘Char’
+      Expected type: String
+        Actual type: [String]
+    • In the first argument of ‘addHtmlan’, namely ‘(str)’
+      In the first argument of ‘map’, namely ‘(addHtmlan (str))’
+      In the expression: map (addHtmlan (str)) str
+   |
+27 | addHtmlfunc str = map (addHtmlan(str)) str    |                                  ^^^
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Failed, no modules loaded.
+<Prelude>  :cd C:\Users\user\Desktop\UFSM - Bacharelado em Ciencia da Computacao\3 semestre\Paradigmas de Programação
+Warning: changing directory causes all loaded modules to be unloaded,
+because the search path has changed.
+<Prelude>  :load "t1.hs"
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Ok, one module loaded.
+<Prelude>  addHtmlfunc ["abra", "ca", "dabra"]
+["<LI>abra<LI>","<LI>ca<LI>","<LI>dabra<LI>"]
+<Prelude>  :cd C:\Users\user\Desktop\UFSM - Bacharelado em Ciencia da Computacao\3 semestre\Paradigmas de Programação
+Warning: changing directory causes all loaded modules to be unloaded,
+because the search path has changed.
+<Prelude>  :load "t1.hs"
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Ok, one module loaded.
+<Prelude>  substTrac "Rio Grande do Sul"
+"--- ------ -- ---"
+<Prelude>  :reload
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Ok, one module loaded.
+<Prelude>  encondeS "Rio Grande do Sul"
+"--- ------ -- ---"
+<Prelude>  :cd C:\Users\user\Desktop\UFSM - Bacharelado em Ciencia da Computacao\3 semestre\Paradigmas de Programação
+Warning: changing directory causes all loaded modules to be unloaded,
+because the search path has changed.
+<Prelude>  :load "t1.hs"
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Ok, one module loaded.
+<Prelude>  pegaPrimeironome "Henrique Rodrigues"
+"Henrique"
+<Prelude>  :cd C:\Users\user\Desktop\UFSM - Bacharelado em Ciencia da Computacao\3 semestre\Paradigmas de Programação
+Warning: changing directory causes all loaded modules to be unloaded,
+because the search path has changed.
+<Prelude>  :load "t1.hs"
+
+t1.hs:59:20: error:
+    Pattern syntax in expression context:
+        c -> if c /= "0123456789" then False else True
+   |
+59 | isInt str = filter(c -> if c /= "0123456789" then False else True)
+   |                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Failed, no modules loaded.
+<Prelude>  :cd C:\Users\user\Desktop\UFSM - Bacharelado em Ciencia da Computacao\3 semestre\Paradigmas de Programação
+Warning: changing directory causes all loaded modules to be unloaded,
+because the search path has changed.
+<Prelude>  :load "t1.hs"
+
+t1.hs:59:17: error:
+    Pattern syntax in expression context:
+        c -> if c /= "0123456789" then False else True
+   |
+59 | isInt str = map(c -> if c /= "0123456789" then False else True) str
+   |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Failed, no modules loaded.
+<Prelude>  :cd C:\Users\user\Desktop\UFSM - Bacharelado em Ciencia da Computacao\3 semestre\Paradigmas de Programação
+Warning: changing directory causes all loaded modules to be unloaded,
+because the search path has changed.
+<Prelude>  :load "t1.hs"
+
+t1.hs:59:13: error:
+    • Couldn't match expected type ‘Bool’ with actual type ‘[Bool]’
+    • In the expression:
+        map (\ c -> if c /= "0123456789" then False else True) str
+      In an equation for ‘isInt’:
+          isInt str
+            = map (\ c -> if c /= "0123456789" then False else True) str
+   |
+59 | isInt str = map(\c -> if c /= "0123456789" then False else True) str
+   |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+t1.hs:59:66: error:
+    • Couldn't match type ‘Char’ with ‘[Char]’
+      Expected type: [[Char]]
+        Actual type: String
+    • In the second argument of ‘map’, namely ‘str’
+      In the expression:
+        map (\ c -> if c /= "0123456789" then False else True) str
+      In an equation for ‘isInt’:
+          isInt str
+            = map (\ c -> if c /= "0123456789" then False else True) str
+   |
+59 | isInt str = map(\c -> if c /= "0123456789" then False else True) str
+   |                                                                  ^^^
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Failed, no modules loaded.
+<Prelude>  :cd C:\Users\user\Desktop\UFSM - Bacharelado em Ciencia da Computacao\3 semestre\Paradigmas de Programação
+Warning: changing directory causes all loaded modules to be unloaded,
+because the search path has changed.
+<Prelude>  :load "t1.hs"
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Failed, no modules loaded.
+
+t1.hs:59:13: error:
+    • Couldn't match expected type ‘Bool’ with actual type ‘[[Char]]’
+    • In the expression:
+        filter (\ c -> if c /= "0123456789" then False else True) str
+      In an equation for ‘isInt’:
+          isInt str
+            = filter (\ c -> if c /= "0123456789" then False else True) str
+   |
+59 | isInt str = filter(\c -> if c /= "0123456789" then False else True) str
+   |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+t1.hs:59:69: error:
+    • Couldn't match type ‘Char’ with ‘[Char]’
+      Expected type: [[Char]]
+        Actual type: String
+    • In the second argument of ‘filter’, namely ‘str’
+      In the expression:
+        filter (\ c -> if c /= "0123456789" then False else True) str
+      In an equation for ‘isInt’:
+          isInt str
+            = filter (\ c -> if c /= "0123456789" then False else True) str
+   |
+59 | isInt str = filter(\c -> if c /= "0123456789" then False else True) str
+   |                                                                     ^^^
+<Prelude>  :cd C:\Users\user\Desktop\UFSM - Bacharelado em Ciencia da Computacao\3 semestre\Paradigmas de Programação
+Warning: changing directory causes all loaded modules to be unloaded,
+because the search path has changed.
+<Prelude>  :load "t1.hs"
+
+t1.hs:60:93: error:
+    • Couldn't match type ‘Char’ with ‘[Char]’
+      Expected type: [[Char]]
+        Actual type: String
+
+    • In the second argument of ‘filter’, namely ‘str’
+      In the first argument of ‘length’, namely
+        ‘(filter (\ c -> if c /= "0123456789" then False else True) str)’
+      In the second argument of ‘(>)’, namely
+        ‘length
+           (filter (\ c -> if c /= "0123456789" then False else True) str)’
+   |
+60 | isInt str = if length str > length (filter(\c -> if c /= "0123456789" then False else True) str) then True else False
+   |                                                                                             ^^^
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Failed, no modules loaded.
+<Prelude>  :cd C:\Users\user\Desktop\UFSM - Bacharelado em Ciencia da Computacao\3 semestre\Paradigmas de Programação
+Warning: changing directory causes all loaded modules to be unloaded,
+because the search path has changed.
+<Prelude>  :load "t1.hs"
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Ok, one module loaded.
+<Prelude>  isInt "01234"
+False
+<Prelude>  :reload
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Ok, one module loaded.
+<Prelude>  isInt "01234"
+True
+<Prelude>  isInt "123a"
+False
+<Prelude>  :cd C:\Users\user\Desktop\UFSM - Bacharelado em Ciencia da Computacao\3 semestre\Paradigmas de Programação
+Warning: changing directory causes all loaded modules to be unloaded,
+because the search path has changed.
+<Prelude>  :load "t1.hs"
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Ok, one module loaded.
+<Prelude>  lasName " Henrique Rodrigues de LALALA"
+
+<interactive>:163:1: error:
+    Variable not in scope: lasName :: [Char] -> t
+<Prelude>  lastName " Henrique Rodrigues da Silva"
+
+<interactive>:164:1: error:
+    Variable not in scope: lastName :: [Char] -> t
+<Prelude>  :reload
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Failed, no modules loaded.
+<Prelude>  
+t1.hs:64:43: error:
+    • Variable not in scope: str :: [Char]
+    • Perhaps you meant ‘srt’ (line 64)
+   |
+64 | lastName srt = reverse(firstName (reverse str))    |                                           ^^^
+:reload
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Ok, one module loaded.
+<Prelude>  lastName "Henrique Rodrigues da Silva"
+"Silva"
+<Prelude>  :cd C:\Users\user\Desktop\UFSM - Bacharelado em Ciencia da Computacao\3 semestre\Paradigmas de Programação
+Warning: changing directory causes all loaded modules to be unloaded,
+because the search path has changed.
+<Prelude>  :load "t1.hs"
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Failed, no modules loaded.
+
+t1.hs:67:17: error:
+    • Couldn't match expected type ‘[Char]’ with actual type ‘Char’
+    • In the first argument of ‘(++)’, namely ‘(head str)’
+      In the expression: (head str) ++ (lastName (str))
+      In an equation for ‘userName’:
+          userName str = (head str) ++ (lastName (str))
+   |
+67 | userName str = (head str) ++ (lastName(str))
+   |                 ^^^^^^^^
+<Prelude>  :cd C:\Users\user\Desktop\UFSM - Bacharelado em Ciencia da Computacao\3 semestre\Paradigmas de Programação
+Warning: changing directory causes all loaded modules to be unloaded,
+because the search path has changed.
+<Prelude>  :load "t1.hs"
+
+t1.hs:67:17: error:
+    • Couldn't match expected type ‘[Char]’ with actual type ‘Char’
+    • In the first argument of ‘(++)’, namely ‘(head str)’
+      In the expression: (head str) ++ (lastName str)
+      In an equation for ‘userName’:
+          userName str = (head str) ++ (lastName str)
+   |
+67 | userName str = (head str) ++ (lastName str)
+   |                 ^^^^^^^^
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Failed, no modules loaded.
+<Prelude>  :cd C:\Users\user\Desktop\UFSM - Bacharelado em Ciencia da Computacao\3 semestre\Paradigmas de Programação
+Warning: changing directory causes all loaded modules to be unloaded,
+because the search path has changed.
+<Prelude>  :load "t1.hs"
+
+t1.hs:67:66: error: parse error on input ‘]’
+   |
+67 | userName str = concat [take 1 (head (words str) ++ (lastName str)]
+   |                                                                  ^
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Failed, no modules loaded.
+<Prelude>  :cd C:\Users\user\Desktop\UFSM - Bacharelado em Ciencia da Computacao\3 semestre\Paradigmas de Programação
+Warning: changing directory causes all loaded modules to be unloaded,
+because the search path has changed.
+<Prelude>  :load "t1.hs"
+
+t1.hs:67:63: error: parse error on input ‘]’
+   |
+67 | userName str = concat [take 1 (head (words str),(lastName str)]
+   |                                                               ^
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Failed, no modules loaded.
+<Prelude>  :reload
+
+t1.hs:67:78: error: parse error on input ‘]’
+   |
+67 | userName str = map toLower (concat [take 1 (head (words str),(lastName (str))])
+   |                                                                              ^
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Failed, no modules loaded.
+<Prelude>  :cd C:\Users\user\Desktop\UFSM - Bacharelado em Ciencia da Computacao\3 semestre\Paradigmas de Programação
+Warning: changing directory causes all loaded modules to be unloaded,
+because the search path has changed.
+<Prelude>  :load "t1.hs"
+
+t1.hs:67:84: error: parse error on input ‘]’
+   |
+67 | userName str = map toLower (concat [take 1 (head (words str),(lastName (words str))])
+   |                                                                                    ^
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Failed, no modules loaded.
+<Prelude>  :reload
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+
+t1.hs:67:20: error: Variable not in scope: toLower :: a0 -> Char
+   |
+67 | userName str = map toLower (concat [take 1 (head (words str),(lastName (str)))])    |                    ^^^^^^^
+Failed, no modules loaded.
+<Prelude>  :reload
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Failed, no modules loaded.
+<Prelude>  
+t1.hs:67:20: error: Variable not in scope: toLower :: Char -> Char
+   |
+67 | userName str = map toLower (concat [take 1 (head str),(lastName str)])    |                    ^^^^^^^
+:reload
+
+t1.hs:67:20: error: Variable not in scope: toLower :: Char -> Char
+   |
+67 | userName str = map toLower (concat [take 1 (head str),(lastName str)])    |                    ^^^^^^^
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Failed, no modules loaded.
+<Prelude>  :reload
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Failed, no modules loaded.
+<Prelude>  
+t1.hs:67:20: error: Variable not in scope: toLower :: Char -> Char
+   |
+67 | userName str = map toLower (concat [take 1 (head (words str)),(lastName str)])    |                    ^^^^^^^
+:cd C:\Users\user\Desktop\UFSM - Bacharelado em Ciencia da Computacao\3 semestre\Paradigmas de Programação
+Warning: changing directory causes all loaded modules to be unloaded,
+because the search path has changed.
+<Prelude>  :load "t1.hs"
+
+t1.hs:67:20: error: Variable not in scope: toLower :: Char -> Char
+   |
+67 | userName str = map toLower (concat [take 1 (head (words str)),(lastName str)])    |                    ^^^^^^^
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Failed, no modules loaded.
+<Prelude>  :cd C:\Users\user\Desktop\UFSM - Bacharelado em Ciencia da Computacao\3 semestre\Paradigmas de Programação
+Warning: changing directory causes all loaded modules to be unloaded,
+because the search path has changed.
+<Prelude>  :load "t1.hs"
+
+t1.hs:67:20: error: Variable not in scope: toLower :: Char -> Char
+   |
+67 | userName str = map toLower (concat [take 1 (head (words str)),(lastName (words str))])    |                    ^^^^^^^
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Failed, no modules loaded.
+<Prelude>  :reload
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Failed, no modules loaded.
+<Prelude>  
+t1.hs:67:20: error: Variable not in scope: toLower :: Char -> Char
+   |
+67 | userName str = map toLower (concat [take 1 (head (words str)),( last(words str))])    |                    ^^^^^^^
+:cd C:\Users\user\Desktop\UFSM - Bacharelado em Ciencia da Computacao\3 semestre\Paradigmas de Programação
+Warning: changing directory causes all loaded modules to be unloaded,
+because the search path has changed.
+<Prelude>  :load "t1.hs"
+
+t1.hs:67:20: error: Variable not in scope: toLower :: Char -> Char
+   |
+67 | userName str = map toLower (concat [take 1 (head (words plv)), lastName (words plv)])    |                    ^^^^^^^
+
+t1.hs:67:57: error: Variable not in scope: plv :: String
+   |
+67 | userName str = map toLower (concat [take 1 (head (words plv)), lastName (words plv)])    |                                                         ^^^
+
+t1.hs:67:80: error: Variable not in scope: plv :: String
+   |
+67 | userName str = map toLower (concat [take 1 (head (words plv)), lastName (words plv)])    |                                                                                ^^^
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Failed, no modules loaded.
+<Prelude>  :cd C:\Users\user\Desktop\UFSM - Bacharelado em Ciencia da Computacao\3 semestre\Paradigmas de Programação
+Warning: changing directory causes all loaded modules to be unloaded,
+because the search path has changed.
+<Prelude>  :load "t1.hs"
+
+t1.hs:67:20: error: Variable not in scope: toLower :: Char -> Char
+   |
+67 | userName str = map toLower (concat [take 1 (head (words str)), lastName (words str)])    |                    ^^^^^^^
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Failed, no modules loaded.
+<Prelude>  :cd C:\Users\user\Desktop\UFSM - Bacharelado em Ciencia da Computacao\3 semestre\Paradigmas de Programação
+Warning: changing directory causes all loaded modules to be unloaded,
+because the search path has changed.
+<Prelude>  :load "t1.hs"
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+
+t1.hs:67:74: error:
+    • Couldn't match type ‘[Char]’ with ‘Char’
+      Expected type: String
+        Actual type: [String]
+
+    • In the first argument of ‘lastName’, namely ‘(words str)’
+      In the expression: lastName (words str)
+      In the first argument of ‘concat’, namely
+        ‘[take 1 (head (words str)), lastName (words str)]’
+   |
+67 | userName str = map toLower (concat [take 1 (head (words str)), lastName (words str)])    |                                                                          ^^^^^^^^^
+Failed, no modules loaded.
+<Prelude>  :reload
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Ok, one module loaded.
+<Prelude>  :reload
+
+t1.hs:67:76: error: parse error on input ‘)’
+   |
+67 | userName str = map toLower (concat [take 1 (head (words str)), lastName str)])    |                                                                            ^
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Failed, no modules loaded.
+<Prelude>  :cd C:\Users\user\Desktop\UFSM - Bacharelado em Ciencia da Computacao\3 semestre\Paradigmas de Programação
+Warning: changing directory causes all loaded modules to be unloaded,
+because the search path has changed.
+<Prelude>  :load "t1.hs"
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Ok, one module loaded.
+<Prelude>  :reload
+Ok, one module loaded.
+<Prelude>  userName "Henrique Rodrigues"
+"hrodrigues"
+<Prelude>  userName "HENRIQUE RODRIGUES"
+"hrodrigues"
+<Prelude>  userName " JON BON JOVI"
+"jjovi"
+<Prelude>  userName " Bruce Wayne "
+"b"
+<Prelude>  userName"Bruce Wayne"
+"bwayne"
+<Prelude>  :reload
+
+t1.hs:70:1: error:
+    Illegal type signature: ‘ch’
+      Type signatures are only allowed in patterns with ScopedTypeVariables
+   |
+70 | substVowel :: ch     | ^^^^^^^^^^^^^^^^
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Failed, no modules loaded.
+<Prelude>  :reload
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Ok, one module loaded.
+<Prelude>  encondeName "Henrique Rodrigues"
+
+<interactive>:206:1: error:
+    • Variable not in scope: encondeName :: [Char] -> t
+    • Perhaps you meant ‘encodeName’ (line 83)
+<Prelude>  encodeName "Henrique Rodrigues"
+"H3nr2q03 R1dr2g03s"
+<Prelude>  encodeName "Anderson Silva"
+"4nd3rs1n S2lv4"
+<Prelude>  encodeName "Badtz Maru"
+"B4dtz M4r0"
+<Prelude>  :reload
+
+t1.hs:108:23: error:
+    parse error on input ‘=’
+    Perhaps you need a 'let' in a 'do' block?
+    e.g. 'let x = 5' instead of 'x = 5'
+    |
+108 |  betterEncodeName str = map(betterSubstVowel)str     |                       ^
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Failed, no modules loaded.
+<Prelude>  :reload
+
+t1.hs:108:23: error:
+    parse error on input ‘=’
+    Perhaps you need a 'let' in a 'do' block?
+    e.g. 'let x = 5' instead of 'x = 5'
+    |
+108 |  betterEncodeName str = map (betterSubstVowel) str     |                       ^
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Failed, no modules loaded.
+<Prelude>  :reload
+
+t1.hs:108:23: error:
+    parse error on input ‘=’
+    Perhaps you need a 'let' in a 'do' block?
+    e.g. 'let x = 5' instead of 'x = 5'
+    |
+108 |  betterEncodeName str = concatMap (betterSubstVowel) str     |                       ^
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Failed, no modules loaded.
+<Prelude>  :reload
+
+t1.hs:108:23: error:
+    parse error on input ‘=’
+    Perhaps you need a 'let' in a 'do' block?
+    e.g. 'let x = 5' instead of 'x = 5'
+    |
+108 |  betterEncodeName str = concatMap (\ch -> betterSubstVowel ch) str     |                       ^
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Failed, no modules loaded.
+<Prelude>  :reload
+
+t1.hs:108:23: error:
+    parse error on input ‘=’
+    Perhaps you need a 'let' in a 'do' block?
+    e.g. 'let x = 5' instead of 'x = 5'
+    |
+108 |  betterEncodeName str = concatMap (\ch -> betterSubstVowel ch) str     |                       ^
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Failed, no modules loaded.
+<Prelude>  :reload
+
+t1.hs:108:23: error:
+    parse error on input ‘=’
+    Perhaps you need a 'let' in a 'do' block?
+    e.g. 'let x = 5' instead of 'x = 5'
+    |
+108 |  betterEncodeName str = concatMap (\ch -> betterSubstVowel ch) str     |                       ^
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Failed, no modules loaded.
+<Prelude>  :reload
+
+t1.hs:108:23: error:
+    parse error on input ‘=’
+    Perhaps you need a 'let' in a 'do' block?
+    e.g. 'let x = 5' instead of 'x = 5'
+    |
+108 |  betterEncodeName str = concatMap (\ch -> betterSubstVowel ch) str     |                       ^
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Failed, no modules loaded.
+<Prelude>  :reload
+
+t1.hs:108:23: error:
+    parse error on input ‘=’
+    Perhaps you need a 'let' in a 'do' block?
+    e.g. 'let x = 5' instead of 'x = 5'
+    |
+108 |  betterEncodeName str = concatMap (\ch -> betterSubstVowel ch) str
+    |                       ^
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Failed, no modules loaded.
+<Prelude>  :reload
+
+t1.hs:108:23: error:
+    parse error on input ‘=’
+    Perhaps you need a 'let' in a 'do' block?
+    e.g. 'let x = 5' instead of 'x = 5'
+    |
+108 |  betterEncodeName str = concatMap (\ch -> betterSubstVowel ch) str
+    |                       ^
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Failed, no modules loaded.
+<Prelude>  :reload
+
+t1.hs:108:23: error:
+    parse error on input ‘=’
+    Perhaps you need a 'let' in a 'do' block?
+    e.g. 'let x = 5' instead of 'x = 5'
+    |
+108 |  betterEncodeName str = map (betterSubstVowel) str
+    |                       ^
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Failed, no modules loaded.
+<Prelude>  :reload
+
+t1.hs:108:23: error:
+    parse error on input ‘=’
+    Perhaps you need a 'let' in a 'do' block?
+    e.g. 'let x = 5' instead of 'x = 5'
+    |
+108 |  betterEncodeName str = map (bSubstVowel) str
+    |                       ^
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Failed, no modules loaded.
+<Prelude>  :reload
+
+t1.hs:108:23: error:
+    parse error on input ‘=’
+    Perhaps you need a 'let' in a 'do' block?
+    e.g. 'let x = 5' instead of 'x = 5'
+    |
+108 |  betterEncodeName str = (concatMap (\ch -> betterSubstVowel ch) str)
+    |                       ^
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Failed, no modules loaded.
+<Prelude>  :reload
+
+t1.hs:77:23: error:
+    parse error on input ‘=’
+    Perhaps you need a 'let' in a 'do' block?
+    e.g. 'let x = 5' instead of 'x = 5'
+   |
+77 |  betterEncodeName str = (concatMap (\ch -> betterSubstVowel ch) str)
+   |                       ^
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Failed, no modules loaded.
+<Prelude>  :reload
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Ok, one module loaded.
+<Prelude>  :reload
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Failed, no modules loaded.
+
+t1.hs:77:24: error:
+    • Couldn't match type ‘[Char]’ with ‘Char’
+      Expected type: String
+        Actual type: [String]
+
+    • In the expression: map (betterSubstVowel) str
+      In an equation for ‘betterEncodeName’:
+          betterEncodeName str = map (betterSubstVowel) str
+   |
+77 | betterEncodeName str = map (betterSubstVowel) str
+   |                        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+<Prelude>  :reload
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Ok, one module loaded.
+<Prelude>  betterEncodeName "Henrique Rodrigues"
+"H3nr1q003 R0dr1g003s"
+<Prelude>  betterEncodeName "Anderson Silva"
+"4nd3rs0n S1lv4"
+<Prelude>  betterEncodeName " Badtz Maru"
+" B4dtz M4r00"
+<Prelude>  :reload
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Ok, one module loaded.
+<Prelude>  :reload
+
+t1.hs:112:39: error: parse error on input ‘=>’
+    |
+112 | verifDez str = map (\c -> if length c => 10 then take 10 c else take 10 (c ++ ".........") ) str
+    |                                       ^^
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Failed, no modules loaded.
+<Prelude>  :reload
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Ok, one module loaded.
+<Prelude>  verifDez ["Henrique","Henri","HenriqueRodrigues"]
+["Henrique..","Henri.....","HenriqueRo"]
+<Prelude>  :edit
+[1 of 1] Compiling Main             ( t1.hs, interpreted )
+Ok, one module loaded.
+<Prelude>  
