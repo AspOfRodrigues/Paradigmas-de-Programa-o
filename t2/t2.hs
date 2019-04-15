@@ -4,68 +4,106 @@ type Point     = (Float,Float)
 type Rect      = (Point,Float,Float)
 type Circle    = (Point,Float)
 
-
--------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
 -- Paletas
--------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
 
 rgbPalette :: Int -> [(Int,Int,Int)]
 rgbPalette n = take n $ cycle [(255,0,0),(0,255,0),(0,0,255)]
 
 greenPalette :: Int -> [(Int,Int,Int)]
-greenPalette n = [(0,80+i*10,0) | i <- [0..n] ]
+greenPalette n = [(0,80+i*5,0) | i <- [0..n] ]
 
 redPalette :: Int -> [(Int,Int,Int)]
-redPalette n = [(80+i*10,0,0) | i <- [0..n] ]
+redPalette n = [(80+i*5,0,0) | i <- [0..n] ]
 
 bluePalette :: Int -> [(Int,Int,Int)]
-bluePalette n = [(0,0,80+i*10) | i <- [0..n] ]
+bluePalette n = [(0,0,80+i*5) | i <- [0..n] ]
 
-
--------------------------------------------------------------------------------
--- Geração de retângulos em suas posições
--------------------------------------------------------------------------------
-
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+-- Geração de retângulos em suas posições ------------------------------------
+------------------------------------------------------------------------------
+-- Case 1 --------------------------------------------------------------------
 genRectsInLine :: Int -> Int -> [Rect] --
-genRectsInLine n c = [((m*(w+gap), z*(h+gap)  ),w,h) | m <- [0..fromIntegral(n-1)] , z<-[0..fromIntegral(c-1)]] 
-  where (w,h) = (50,50)
-        gap = 10
-
--------------------------------------------------------------------------------
--- Geração de circulos 
--------------------------------------------------------------------------------
--- Case 2 ---------------------------------------------------------------------
-genCircInCircles ::  Float -> Int -> [Circle]
-genCircInCircles r n  = [((posx, posy), 2*(r/5))| qtd <- [0..n] , posx <- [(r + gap) + ((r+(gap/2)) * sin( fromIntegral(qtd) * (2 * pi/(fromIntegral n))))] , posy <-[(r + gap) + ((r+(gap/2)) * cos( fromIntegral(qtd) * (2 * pi/(fromIntegral n))))] ] -- 
-  where r = 50
-        gap = 100 
-        --posCircleX = (r + gap) + (r * sin( fromIntegral(qtd) * (2 * pi/(fromIntegral t))))
-        --posCircleY = (r + gap) + (r * cos( fromIntegral(qtd) * (2 * pi/(fromIntegral t))))
-------------------------------------------------------------------------------
--- Case 3 ---------------------------------------------------------------------
--- Geracao de circulos sobrepostos
-------------------------------------------------------------------------------
-genCircSobCircles ::  Float -> Int -> [Circle]
-genCircSobCircles r n  = [((posx, posy), r + 2*(r/3))| qtd <- [0..n] , posx <- [(r + gap) + (r * sin( fromIntegral(qtd) * (2 * pi/(fromIntegral n))))] , posy <-[(r + gap) + (r * cos( fromIntegral(qtd) * (2 * pi/(fromIntegral n))))] ] -- 
-  where r = 25
-        gap = 100
-        --posCircleX = (r + gap) + (r * sin( fromIntegral(qtd) * (2 * pi/(fromIntegral t))))
-        --posCircleY = (r + gap) + (r * cos( fromIntegral(qtd) * (2 * pi/(fromIntegral t))))
-genCircSobCirclesInLine :: Float -> Int -> [Circle]
-genCircSobCirclesInLine r n  = [((posx , posy), r + 2*(r/3) )| qtd <- [0..n] , posx <- [(r + gap) + (r * sin( fromIntegral(qtd) * (2 * pi/(fromIntegral n))))] , posy <-[(r + gap) + (r * cos( fromIntegral(qtd) * (2 * pi/(fromIntegral n))))] ] -- 
-  where r = 50
-        gap = 50
---genCircSobCirclesInLine n r control= [((genCircSobCirclesInLine r control )) | m <- [0..fromIntegral(n-1)]]
+genRectsInLine n c = [((m*(xSpace), z*(ySpace)),w,h) | m <- [0..fromIntegral(n-1)] , z<-[0..fromIntegral(c-1)]] 
+  where (w,h) = (80,50)
+        gap = 5
+        xSpace = w + gap
+        ySpace = h + gap
 
 ------------------------------------------------------------------------------
--- Case 4 ---------------------------------------------------------------------
--- Geracao de circulos em curvas
 ------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+-- Geração de circulos -------------------------------------------------------
+------------------------------------------------------------------------------
+-- Case 2 --------------------------------------------------------------------
+posCircleX :: Float -> Int -> Int -> Float
+posCircleX r n qtd = (space)+(spcCirc*sin(fromIntegral(qtd)*(cst)))
+  where constante = 2 * pi/(fromIntegral n)
+        gap = 150
+        space = r + gap
+        spcCirc = r + (gap/2) -- Space Between Circles
+        cst = 2 * pi/(fromIntegral n) -- constante
+
+posCircleY :: Float -> Int -> Int -> Float
+posCircleY r n qtd = (space)+(spcCirc*cos(fromIntegral(qtd)*(cst)))
+  where constante = 2 * pi/(fromIntegral n)
+        gap = 150
+        space = r + gap
+        spcCirc = r + (gap/2) -- Space Between Circles
+        cst = 2 * pi/(fromIntegral n) -- constante
+
+genCircInCircles :: Float -> Int -> [Circle]
+genCircInCircles r n = [((posx, posy),2*(r/5))| qtd <- [0..n],posx <- [posCircleX r n qtd],posy <- [posCircleY r n qtd]] -- 
+  where r = 50
+        gap = 150
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+-- Geracao de circulos sobrepostos -------------------------------------------
+------------------------------------------------------------------------------
+-- Case 3 --------------------------------------------------------------------
+geraPos :: Float -> Float -> Int -> Int -> Int -> [Point]
+geraPos w h columns lines gap = [(((circleW / const) * fromIntegral y), ((circleH / const) * fromIntegral x )) | x <- [1..lines], y <- [1..columns]]
+  where const = 2 + fromIntegral gap
+        circleW = w / fromIntegral columns 
+        circleH = h / fromIntegral lines 
+
+genTripleCirc ::  Point -> Float -> Int -> [Circle]
+genTripleCirc (x,y) r n = [( (x + (cos i * 36),y - (sin i * 36)) ,r) | i <- [0,s..pi]]
+  where s = pi/ fromIntegral (n - 1) 
+
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+-- Case 4 --------------------------------------------------------------------
+------------------------------------------------------------------------------
+-- Geracao de circulos em curvas ---------------------------------------------
 genCircInCurves ::  Float -> Int -> [Circle]
-genCircInCurves r n  = [((posx, posy), r - 2*(r/3))| qtd <- [0..n] , posx <- [(r + gap) + ((r+gap) * ( fromIntegral(qtd) * (2 * pi/(fromIntegral n))))] , posy <-[(r + gap*4) + ((r+gap) * sin(fromIntegral(qtd) * (2 * pi/(fromIntegral n))))] ] -- r * cos
+genCircInCurves r n  = [((posx, posy), r - 2*(r/3))| qtd <- [0..n] , posx <- [posCircleXCurve r n qtd] , posy <-[posCircleYCurve r n qtd] ] 
   where r = 20
         gap = 15
+
+posCircleXCurve :: Float -> Int -> Int -> Float
+posCircleXCurve r n qtd = (r + gap) + ((r+gap) * ( fromIntegral(qtd) * (2 * pi/(fromIntegral n))))
+  where constante = 2 * pi/(fromIntegral n)
+        gap = 30
+
+posCircleYCurve :: Float -> Int -> Int -> Float
+posCircleYCurve r n qtd = (r + gap*4) + ((r+gap) * sin(fromIntegral(qtd) * (2 * pi/(fromIntegral n))))
+  where constante = 2 * pi/(fromIntegral n)
+        gap = 30
+        
 -------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
 -- Strings SVG
 -------------------------------------------------------------------------------
 
@@ -106,16 +144,15 @@ svgElements func elements styles = concat $ zipWith func elements styles
 -- Função principal que gera arquivo com imagem SVG
 -------------------------------------------------------------------------------
 
-main :: IO ()
-main = do
-  writeFile "caseX.svg" $ svgstrs
-  where svgstrs = svgBegin w h ++ svgfigs ++ svgEnd
-        svgfigs = svgElements svgRect rects (map svgStyle palette)
-        rects = genRectsInLine nrects crects
-        palette = greenPalette nrects
-        nrects = 44
-        crects = 5
-        (w,h) = (1500,500) -- width,height da imagem SVG
+--main :: IO ()
+--main = do
+  --writeFile "caseX.svg" $ svgstrs
+  --where svgstrs = svgBegin w h ++ svgfigs ++ svgEnd
+        --svgfigs = svgElements svgRect rects (map svgStyle palette)
+        --rects = genRectsInLine nrects
+        --palette = greenPalette nrects
+        --nrects = 10
+        --(w,h) = (1500,500) -- width,height da imagem SVG
 
 ----------------------------T2-------------------------------------------------
 --------------------------Case1------------------------------------------------
@@ -135,13 +172,10 @@ genCase2 = do
   writeFile "case2.svg" $ svgstrs
   where svgstrs = svgBegin w h ++ svgfigs ++ svgEnd
         svgfigs = svgElements svgCircle circle (map svgStyle palette)
-        --rects = genRectsInLine nrects crects
         circle = genCircInCircles raio ncircles
         palette = rgbPalette ncircles
-        ncircles = 12
+        ncircles = 24
         raio = 50
-        --nrects = 44
-        --crects = 5
         (w,h) = (1500,500) -- width,height da imagem SVG
 
 --------------------------Case3------------------------------------------------
@@ -150,11 +184,11 @@ genCase3 = do
   writeFile "case3.svg" $ svgstrs
   where svgstrs = svgBegin w h ++ svgfigs ++ svgEnd
         svgfigs = svgElements svgCircle circle (map svgStyle palette)
-        circle = genCircSobCircles raio ncircles
+        circle = concat [genTripleCirc (x,y) 50 3 | (x,y) <- geraPos 25000 20000 4 3 30]
         palette = rgbPalette ncircles
-        ncircles = 3
+        ncircles = 36
         raio = 50
-        (w,h) = (1500,500) -- width,height da imagem SVG
+        (w,h) = (1500,1500) -- width,height da imagem SVG
 --------------------------Case4------------------------------------------------
 genCase4 :: IO ()
 genCase4 = do
@@ -166,10 +200,3 @@ genCase4 = do
         ncircles = 15
         raio = 15
         (w,h) = (1500,500) -- width,height da imagem S
-
-
----------------------Notas(apagar antes de enviar)------------------------------
---variavel gap : uso para definir o espaco entre as figuras e as bordas da img
---a parte dos circulos estar hard coded, tentar mudar antes do envio
---tentar implementar uma color wheel
---Gerar novos testes do GHci que foram perdidos quando o notebook se desligou 
