@@ -1,2 +1,2 @@
 # Paradigmas-de-Programa-o
-Repositório destinado a cadeira de Paradigmas de Programação
+Repositório destinado a disciplina de Paradigmas de Programação
