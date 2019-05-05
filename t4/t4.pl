@@ -122,8 +122,8 @@ probabilidade(maria,apartamento,sexta).
 chave(bia).
 
 chave(X):-
-	probabilidade(X,portoalegre,terca);
-	probabilidade(X,santamaria,quarta).
+	probabilidade(X,santamaria,segunda);
+	probabilidade(X,portoalegre,terca).
 
 %_____arma_____
 
