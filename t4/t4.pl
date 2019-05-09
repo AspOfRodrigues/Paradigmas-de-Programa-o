@@ -14,41 +14,15 @@ pobre(bernardo).
 pobre(bia).
 pobre(pedro).
 
-
-%_____vitima_____
-
-vitima(anita).
-
-%_____dias_____
-
-dia(segunda).
-dia(terca).
-dia(quarta).
-dia(quinta).
-dia(sexta).
-dia(sabado).
-dia(domingo).
-
 %_____ciume_____
 
 ciume(caren).
 ciume(alice).
 
-
-%_____cidade_____
-
-cidade(santamaria).
-cidade(portoalegre).
-
 %_____insano_____
 
 insano(maria).
 insano(adriano).
-
-%_____dia_do_crime_____
-
-crime_day(quinta).
-crime_day(sexta).
 
 %_____probabilidades_____
 
