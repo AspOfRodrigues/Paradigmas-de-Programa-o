@@ -1,0 +1,2 @@
+https://api.github.com/repos/AspOfRodrigues/Paradigmas-de-Programa-o/commits
+https://api.github.com/repos/menegais1/LZW84-Bidirectional/commits
