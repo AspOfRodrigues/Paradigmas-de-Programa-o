@@ -1,0 +1,27 @@
+# depslib dependency file v1.0
+1562712147 source:c:\users\user\desktop\ufsm bacharelado em ciencia da computacao\3 semestre\paradigmas de programação\github\paradigmas-de-programa-o-master\perso\poo\c++\poo_pratica1\main.cpp
+	<iostream>
+	<math.h>
+	<stdlib.h>
+	<stdio.h>
+
+1562714788 source:c:\users\user\desktop\ufsm bacharelado em ciencia da computacao\3 semestre\paradigmas de programação\github\paradigmas-de-programa-o-master\perso\poo\c++\poo_pratica1\testcircle.cpp
+	<iostream>
+	<math.h>
+	<stdlib.h>
+	<stdio.h>
+	"Circulo.h"
+	"Point.h"
+
+1562712832 c:\users\user\desktop\ufsm bacharelado em ciencia da computacao\3 semestre\paradigmas de programação\github\paradigmas-de-programa-o-master\perso\poo\c++\poo_pratica1\circulo.h
+	<iostream>
+	<math.h>
+	<stdlib.h>
+	<stdio.h>
+
+1562714743 c:\users\user\desktop\ufsm bacharelado em ciencia da computacao\3 semestre\paradigmas de programação\github\paradigmas-de-programa-o-master\perso\poo\c++\poo_pratica1\point.h
+	<iostream>
+	<math.h>
+	<stdlib.h>
+	<stdio.h>
+
