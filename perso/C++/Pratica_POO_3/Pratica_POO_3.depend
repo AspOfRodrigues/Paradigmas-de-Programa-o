@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1562799899 source:c:\users\user\desktop\ufsm bacharelado em ciencia da computacao\3 semestre\paradigmas de programação\github\paradigmas-de-programa-o-master\perso\poo\c++\pratica_poo_3\main.cpp
+	<iostream>
+	"Person.h"
+	<vector>
+
+1562799967 c:\users\user\desktop\ufsm bacharelado em ciencia da computacao\3 semestre\paradigmas de programação\github\paradigmas-de-programa-o-master\perso\poo\c++\pratica_poo_3\person.h
+	<iostream>
+	<string>
+	<string.h>
+
