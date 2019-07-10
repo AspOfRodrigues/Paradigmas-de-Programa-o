@@ -1,0 +1,7 @@
+C:\Users\user\Desktop\C# extras\Pratica_1_POO\Pratica_1_POO\bin\Debug\Pratica_1_POO.exe.config
+C:\Users\user\Desktop\C# extras\Pratica_1_POO\Pratica_1_POO\bin\Debug\Pratica_1_POO.exe
+C:\Users\user\Desktop\C# extras\Pratica_1_POO\Pratica_1_POO\bin\Debug\Pratica_1_POO.pdb
+C:\Users\user\Desktop\C# extras\Pratica_1_POO\Pratica_1_POO\obj\Debug\Pratica_1_POO.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\C# extras\Pratica_1_POO\Pratica_1_POO\obj\Debug\Pratica_1_POO.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\C# extras\Pratica_1_POO\Pratica_1_POO\obj\Debug\Pratica_1_POO.exe
+C:\Users\user\Desktop\C# extras\Pratica_1_POO\Pratica_1_POO\obj\Debug\Pratica_1_POO.pdb
